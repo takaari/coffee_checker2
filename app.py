@@ -14,7 +14,7 @@ h1, h2, h3, p, label {
     font-family: "Segoe UI", "Cursive", sans-serif;
 }
 </style>
-
+"""
 st.markdown(page_bg, unsafe_allow_html=True)
 
 # ===== タイトル =====
