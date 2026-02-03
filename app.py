@@ -37,12 +37,12 @@ a_weight = st.number_input("Aのグラム数（g）", min_value=0, value=0, key=
 st.subheader("Bのコーヒー")
 b_price = st.number_input("Bの値段（円）", min_value=0, value=0, key="b_price")
 b_weight = st.number_input("Bのグラム数（g）", min_value=0, value=0, key="b_weight")
-
+"""
 def reset_inputs():
     for key in ["a_price", "a_weight", "b_price", "b_weight"]:
         if key in st.session_state:
             del st.session_state[key]
-
+"""
 
 
 # ===== 結果ボタン =====
@@ -101,6 +101,7 @@ if st.button("結果を表示"):
                 "</div>",
                 unsafe_allow_html=True
             )
+"""          
 st.write("")
 st.button("🔄 スタートに戻る", on_click=reset_inputs)
-
+"""
