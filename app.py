@@ -30,13 +30,20 @@ st.write("")
 
 # ===== Aのコーヒー =====
 st.subheader("Aのコーヒー")
-a_price = st.number_input("Aの値段（円）", min_value=0, value=0)
-a_weight = st.number_input("Aのグラム数（g）", min_value=0, value=0)
+a_price = st.number_input("Aの値段（円）", min_value=0, value=0, key="a_price")
+a_weight = st.number_input("Aのグラム数（g）", min_value=0, value=0, key="a_weight")
 
 # ===== Bのコーヒー =====
 st.subheader("Bのコーヒー")
-b_price = st.number_input("Bの値段（円）", min_value=0, value=0)
-b_weight = st.number_input("Bのグラム数（g）", min_value=0, value=0)
+b_price = st.number_input("Bの値段（円）", min_value=0, value=0, key="b_price")
+b_weight = st.number_input("Bのグラム数（g）", min_value=0, value=0, key="b_weight")
+
+def reset_inputs():
+    st.session_state.a_price = 0
+    st.session_state.a_weight = 0
+    st.session_state.b_price = 0
+    st.session_state.b_weight = 0
+
 
 # ===== 結果ボタン =====
 if st.button("結果を表示"):
@@ -94,3 +101,6 @@ if st.button("結果を表示"):
                 "</div>",
                 unsafe_allow_html=True
             )
+st.write("")
+if st.button("🔄 スタートに戻る"):
+    reset_inputs()
